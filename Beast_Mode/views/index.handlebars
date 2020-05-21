@@ -1,0 +1,178 @@
+<form method="POST" action="/newworkout">
+
+<div class="container title-container">
+  <script src="js/script.js"></script>
+<h1 class="ml1">
+  <span class="text-wrapper">
+    <span class="line line1"></span>
+    <span class="letter" id="beast-title-text">Beast Mode!</span>
+    <span class="line line2"></span>
+  </span>
+</h1>
+</div>
+<br>
+
+<div class="container index-container">
+<h3 class="text-center">How Long Do You Want To <span class="beast-text">BEAST!</span> For?</h3>
+<div class="range-control">
+    <input id="inputRange" name="workoutDuration" type="range" min="5" max="120" step="1" value="30" data-thumbwidth="20">
+    <output name="rangeVal"></output>
+  </div>
+</div>
+
+
+{{!-- <div class="container index-container">
+    <h3>How Long Do You Want To <span class="beast-text">BEAST!</span> For?</h3>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="5">5 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="10">10 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="15">15 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="20">20 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="25">25 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="30">30 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="45">45 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="60">60 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="75">1 hour 15 minutes</label>
+    <label class="radio-inline"><input type="radio" name="workoutDuration" value="90">1 hour 30 minutes</label>
+</div> --}}
+<br>
+    
+    {{!-- Display on larger screen --}}
+    <div class="big-display">
+    <div class="container index-container">
+        <h3 class="text-center">Select Muscle Groups to <span class="beast-text">BEAST!</span></h3>
+        <br>
+        
+        <div class="col-md-6 float-left">
+            <div class="col-md-6 left-muscle-list float-left" id="test">
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="neck" >Neck (sternocleidomastoid) </label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders" >Traps (trapezius)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders" >Shoulders (deltoids)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="chest" >Chest (pectoralis)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="bicep" >Biceps (biceps brachii)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="bicep" >Forearm (brachioradialis)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="abs" >Abs (rectus abdominis)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="quads" >Quads (quadriceps)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="calves" >Calves (gastrocnemius)</label>
+            </div>
+            <div class="col-md-6 man-image float-center">
+                <img src="/assets/images/imageMan.png" alt="man" style="float:left;width:100%;height:400px;">
+            </div>
+        </div>
+        <div class="col-md-6 float-left">
+            <div class="col-md-6"></div>
+            <div class="col-md-6 woman-image float-left">
+                <img src="/assets/images/imageWoman.png" alt="woman" style="float:right;width:250px;height:400px;">
+            </div>
+            <div class="col-md-6 right-muscle-list" id="test">
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders">Traps (trapezius)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="tricep">Triceps (triceps brachii)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="back">Lats (latissimus dorsi)</label>
+                <div class="filler-row-small"></div>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="back">Middle Back (rhomboids)</label>
+                <div class="filler-row-big"></div>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="back">Lower Back (Thoracolumbar)</label>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="glutes">Glutes (Gluteusmaximus)</label>
+                
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="quads">Quads (quadriceps)</label>
+                <div class="filler-row-small"></div>
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="hamstrings">Hamstrings (biceps femoris)</label>
+                
+                <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="calves">Calves (gastrocnemius)</label>
+            </div>
+        </div>
+        </div>
+      </div>
+        
+        
+        {{!-- Display on smaller screen --}}
+        <div class="small-display">
+                  <h3 class="text-center">Select Muscle Groups to <span class="beast-text">BEAST!</span></h3>
+          <div class="container index-container">
+        <h5>Upper Body</h5>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="shoulders">Shoulders</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="chest">Chest</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="bicep">Biceps</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="tricep">Triceps</label>
+        
+        <br><br>
+        <h5>Core</h5>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="oblique">Obliques</label>
+        
+        <br><br>
+        <h5>Lower Body</h5>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="hamstrings">Hamstrings</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="glutes">Glutes</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="outer Thigh">Outer Thigh</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="inner Thigh">Inner Thigh</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="quads">Quads</label>
+        <label class="checkbox-inline"><input type="checkbox" name="muscleGroup" value="calves">Calves</label>
+        </div>
+         </div>          
+    </div>
+
+<br>
+  
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <button type="submit" id="submitWorkoutParameters" value="FIRE UP!">FIRE UP!</button>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+<script>
+{{!-- This is the script for the scrolling text --}}
+var textWrapper = document.querySelector('.ml1 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml1 .letter',
+    scale: [0.3,1],
+    opacity: [0,1],
+    translateZ: 0,
+    easing: "easeOutExpo",
+    duration: 600,
+    delay: (el, i) => 70 * (i+1)
+  }).add({
+    targets: '.ml1 .line',
+    scaleX: [0,1],
+    opacity: [0.5,1],
+    easing: "easeOutExpo",
+    duration: 700,
+    offset: '-=875',
+    delay: (el, i, l) => 80 * (l - i)
+  }).add({
+    targets: '.ml1',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+
+
+{{!-- Script for slider --}}
+$('input[type="range"]').on('input', function() {
+
+  var control = $(this),
+    controlMin = control.attr('min'),
+    controlMax = control.attr('max'),
+    controlVal = control.val(),
+    controlThumbWidth = control.data('thumbwidth');
+
+  var range = controlMax - controlMin;
+  
+  var position = ((controlVal - controlMin) / range) * 100;
+  var positionOffset = Math.round(controlThumbWidth * position / 100) - (controlThumbWidth / 2);
+  var output = control.next('output');
+  
+  output
+    .css('left', 'calc(' + position + '% - ' + positionOffset + 'px)')
+    .text(controlVal);
+
+});
+
+</script>

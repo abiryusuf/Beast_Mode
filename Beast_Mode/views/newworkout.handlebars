@@ -1,0 +1,72 @@
+<div class="container timer-container">
+      <p id="timer">Click to Beast!</p>
+</div>
+<br>
+
+<div class="container">
+
+
+<div class="flex-container">
+     
+      {{#each workouts}}
+      <div class="exercise-card">
+      <div class="workout-list-item">
+      <p id="muscle-title">{{this.dataValues.minor_muscle}}</p>
+      <img class="example-image example-pic" src="{{this.dataValues.example}}">
+      <p id="{{this.dataValues.example}}" class="exercise-name">{{this.dataValues.exercise}}</p>
+      <p id="sets-title">{{this.dataValues.sets}}</p>
+       
+       </div>
+        </div>
+        
+      
+{{/each}}
+</div>
+</div>
+</div>
+
+<script>
+{{!-- This is the script for the timer --}}
+
+var timerCount = {{duration}} * 60000;
+var minuteCount = {{duration}} - 1;
+var secondCount = 60;
+var minutesElapsed = 0;
+
+
+$("#timer").on("click", function() {
+
+var timeInterval = setInterval(function() {
+$(".exercise-card:first").attr("id","first-exercise");
+$(".example-image:first").attr("id", "first-exercise-pic");
+secondCount--;
+timerCount--;
+
+$("#timer").text(minuteCount + " minutes | " + secondCount + " seconds");
+if (minuteCount === -1) {
+      clearInterval(timeInterval);
+      alert("KILLED IT.  Well done.");
+       window.location.href = "../index";
+} 
+if (secondCount === 0 || secondCount <0) {
+      secondCount = 60;
+      minuteCount--;
+      minutesElapsed++;
+} 
+if (minutesElapsed === {{timePerExercise}}) {   
+minutesElapsed = 0;
+$(".exercise-card:first").remove();
+}
+}, 1000);
+
+});
+
+
+
+
+
+
+
+
+
+</script>
